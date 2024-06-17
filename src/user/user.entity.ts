@@ -10,7 +10,7 @@ import {
 // TODO: Corrigir imports
 import { Address } from '../address/address.entity';
 import { Invoice } from '../invoice/invoice.entity';
-import { Role } from '../../common/enums/role.enum';
+import { Role } from '../common/enums/role.enum';
 
 @Entity()
 export class User {
