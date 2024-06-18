@@ -66,4 +66,4 @@ $ npm run test:cov
 ## Stay in touch
 
 - Author - [Vittor de Aguiar](https://github.com/vittordeaguiar)
-- Twitter - [@vittordeagiar](https://twitter.com/vittordeaguiar)
+- Twitter - [@vittordeaguiar](https://twitter.com/vittordeaguiar)
