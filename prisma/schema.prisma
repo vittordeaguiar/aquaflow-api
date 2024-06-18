@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model User {
+  id         String    @id @default(uuid())
+  email      String?   @unique
+  password   String
+  name       String?
+  cellphone  String?   @unique
+  cpf        String    @unique
+  rg         String?   @unique
+  civilState String?
+  profession String?
+  gender     String?
+  addressId  String?
+  address    Address?  @relation(fields: [addressId], references: [id])
+  invoices   Invoice[]
+  role       Role      @default(USER)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
+
+model Invoice {
+  id        String    @id @default(uuid())
+  userId    String
+  amount    Float
+  status    String // Exemplos: "paid", "unpaid", "overdue"
+  dueDate   DateTime
+  paidDate  DateTime?
+  user      User      @relation(fields: [userId], references: [id])
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Address {
+  id           String   @id @default(uuid())
+  street       String
+  number       String
+  complement   String?
+  city         String
+  state        String
+  zipcode      String
+  neighborhood String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  User         User[]
+}
