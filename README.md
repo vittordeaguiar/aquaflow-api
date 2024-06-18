@@ -2,13 +2,16 @@
   <img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" />
 </p>
 
-# Smart Water Management System for Artesian Wells
+# AquaFlow API: Backend for Smart Water Management System 
 
 ## Description
 
-AquaFlow is a user-friendly software solution designed to streamline the management of artesian wells for individual owners or small communities. It provides a centralized platform to track and control water usage, billing, and customer information.
+This repository contains the backend API for AquaFlow, a comprehensive software solution designed to streamline the management of artesian wells for individual owners or small communities. The API provides essential endpoints for managing users, billing, usage tracking, reporting, and alerts.
 
 ## Key Features
+
+The API enables the following core functionalities:
+
 - User Management: Easily add, update, and remove customer profiles with detailed information.
 - Billing & Payments: Automate billing cycles, track payments, and manage outstanding balances.
 - Reporting: Generate detailed reports on water usage, billing, and customer activity.
@@ -16,10 +19,13 @@ AquaFlow is a user-friendly software solution designed to streamline the managem
 - Data Security: Robust security measures to protect sensitive customer and billing information.
 
 ## Technology Stack
-- Nest.js
-- Prisma ORM
-- TypeScript
-- MySQL
+
+The API is built using the following technologies:
+
+* **Nest.js:**
+* **Prisma ORM:**
+* **TypeScript:**
+* **MySQL:**
 
 ## Installation
 
