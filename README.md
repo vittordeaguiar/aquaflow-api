@@ -22,10 +22,10 @@ The API enables the following core functionalities:
 
 The API is built using the following technologies:
 
-* **Nest.js:**
-* **Prisma ORM:**
-* **TypeScript:**
-* **MySQL:**
+* **Nest.js**
+* **Prisma ORM**
+* **TypeScript**
+* **MySQL**
 
 ## Installation
 
