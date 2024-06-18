@@ -54,7 +54,7 @@ export class UsersService implements UsersInterface {
     await this.prisma.user.update({
       where: { id },
       data: {
-        ...user, 
+        ...user,
       },
     });
   }
