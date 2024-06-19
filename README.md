@@ -2,7 +2,7 @@
   <img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" />
 </p>
 
-# AquaFlow API: Backend for Smart Water Management System 
+# AquaFlow API: For Smart Water Management System
 
 ## Description
 
