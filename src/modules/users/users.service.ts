@@ -1,8 +1,13 @@
-import { ConflictException, Injectable } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { PrismaService } from 'src/prisma.service';
 import { UsersInterface } from './users.interface';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UserDto } from './dtos/user.dto';
+import { UpdateUserDto } from './dtos/update-user.dto';
 
 @Injectable()
 export class UsersService implements UsersInterface {
@@ -43,24 +48,36 @@ export class UsersService implements UsersInterface {
     const existingUser = await this.prisma.user.findUnique({
       where: { cpf: data.cpf },
     });
-    if (existingUser) {
-      throw new ConflictException('Este CPF já está cadastrado.');
-    }
+    if (existingUser) throw new ConflictException('CPF já foi cadastrado.');
     await this.prisma.user.create({ data });
   }
 
-  // TODO: corrigir função de alteração
-  async update(id: string, user: UserDto): Promise<void> {
+  async verifyExistingUser(id: string): Promise<UserDto | null> {
+    const user = await this.prisma.user.findUnique({ where: { id } });
+    if (!user) throw new NotFoundException('Usuário não encontrado.');
+    return user;
+  }
+
+  async update(id: string, user: UpdateUserDto): Promise<void> {
+    await this.verifyExistingUser(id);
+
+    // Remove undefined properties from user object to avoid updating them in the database
+    const updatedUserData = Object.keys(user).reduce((acc, key) => {
+      if (user[key] !== undefined) acc[key] = user[key];
+      return acc;
+    }, {});
+
     await this.prisma.user.update({
       where: { id },
-      data: {
-        ...user,
-      },
+      data: updatedUserData,
     });
   }
 
-  // TODO: implementar função de deletar
   async delete(id: string): Promise<void> {
-    await this.prisma.user.delete({ where: { id } });
+    await this.verifyExistingUser(id);
+    await this.prisma.$transaction([
+      this.prisma.invoice.deleteMany({ where: { userId: id } }),
+      this.prisma.user.delete({ where: { id } }),
+    ]);
   }
 }
