@@ -34,11 +34,11 @@ model User {
 model Invoice {
   id        String    @id @default(uuid())
   userId    String
-  amount    Float
+  amount    String
   status    String // Exemplos: "paid", "unpaid", "overdue"
   dueDate   DateTime
   paidDate  DateTime?
-  user      User      @relation(fields: [userId], references: [id])
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
 }
