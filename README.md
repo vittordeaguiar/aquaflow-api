@@ -4,6 +4,8 @@
 
 # AquaFlow API: For Smart Water Management System
 
+![Work in Progress](https://img.shields.io/badge/status-WIP-yellow)
+
 ## Description
 
 This repository contains the backend API for AquaFlow, a comprehensive software solution designed to streamline the management of artesian wells for individual owners or small communities. The API provides essential endpoints for managing users, billing, usage tracking, reporting, and alerts.
