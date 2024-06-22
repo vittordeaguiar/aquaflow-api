@@ -16,7 +16,6 @@ The API enables the following core functionalities:
 - Billing & Payments: Automate billing cycles, track payments, and manage outstanding balances.
 - Reporting: Generate detailed reports on water usage, billing, and customer activity.
 - Alerts & Notifications: Receive real-time alerts for payment issues, unusual usage patterns, or system errors.
-- Data Security: Robust security measures to protect sensitive customer and billing information.
 
 ## Technology Stack
 
