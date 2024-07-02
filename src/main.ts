@@ -17,10 +17,10 @@ async function bootstrap() {
   app.setGlobalPrefix('v1'); // Prefixo global
 
   app.enableCors({
-    // origin: ['http://localhost:4200'], // substituir pela URL do front-end
+    origin: ['https://localhost:5173'], // substituir pela URL do front-end
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-    // allowedHeaders: ['Content-Type', 'Authorization'],
-    // credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
   });
 
   app.useGlobalPipes(
