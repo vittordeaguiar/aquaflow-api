@@ -8,7 +8,7 @@
 
 ## Description
 
-This repository contains the backend API for AquaFlow, a comprehensive software solution designed to streamline the management of artesian wells for individual owners or small communities. The API provides essential endpoints for managing users, billing, usage tracking, reporting, and alerts.
+This repository contains the backend API for AquaFlow, a comprehensive software solution designed to streamline the management of artesian wells for individual owners.
 
 ## Key Features
 
@@ -16,8 +16,6 @@ The API enables the following core functionalities:
 
 - User Management: Easily add, update, and remove customer profiles with detailed information.
 - Billing & Payments: Automate billing cycles, track payments, and manage outstanding balances.
-- Reporting: Generate detailed reports on water usage, billing, and customer activity.
-- Alerts & Notifications: Receive real-time alerts for payment issues, unusual usage patterns, or system errors.
 
 ## Technology Stack
 
