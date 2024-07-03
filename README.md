@@ -12,8 +12,6 @@ This repository contains the backend API for AquaFlow, a comprehensive software 
 
 ## Key Features
 
-The API enables the following core functionalities:
-
 - User Management: Easily add, update, and remove customer profiles with detailed information.
 - Billing & Payments: Automate billing cycles, track payments, and manage outstanding balances.
 
