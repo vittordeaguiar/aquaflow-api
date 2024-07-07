@@ -10,11 +10,6 @@
 
 This repository contains the backend API for AquaFlow, a comprehensive software solution designed to streamline the management of artesian wells for individual owners.
 
-## Key Features
-
-- User Management: Easily add, update, and remove customer profiles with detailed information.
-- Billing & Payments: Automate billing cycles, track payments, and manage outstanding balances.
-
 ## Technology Stack
 
 * **Nest.js**
